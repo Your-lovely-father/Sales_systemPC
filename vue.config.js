@@ -25,18 +25,18 @@ module.exports = {
   //   }
   // },
   //反向代理
-  devServer: {
-    proxy: {
-      '/api': {
-        target: process.env.VUE_APP_BASEURL,//指向vue的环境配置 dev：开发 prod：线上 test：测试
-        ws: true,
-        secure:false,
-        changOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
-      }
-    }
-  }
+  // devServer: {
+  //   proxy: {
+  //     '/api': {
+  //       target: process.env.VUE_APP_BASEURL,//指向vue的环境配置 dev：开发 prod：线上 test：测试
+  //       ws: true,
+  //       secure:false,
+  //       changOrigin: true,
+  //       pathRewrite: {
+  //         '^/api': ''
+  //       }
+  //     }
+  //   }
+  // }
 
 };

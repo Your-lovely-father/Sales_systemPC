@@ -52,7 +52,7 @@
                         <div class="header-left">
                             <span class="iconfont icon-shouqi" @click="up" style="display: block" v-if="flag"></span>
                             <span class="iconfont icon-zhankai" @click="up" style="display: block" v-else></span>
-                            <span class="iconfont icon-shuaxin" @click="refresh"></span>
+                            <span class="iconfont icon-icon-1" @click="refresh"></span>
                         </div>
                         <div class="header-right" @mousemove="move" @mouseleave="leave">
                             <el-dropdown>
@@ -97,12 +97,12 @@
                 <div class="crumbs" v-show="isTab">
                     <el-tabs v-model="editableTabsValue" type="border-card"  closable @tab-remove="removeTab" @tab-click="goRouter">
                         <el-tab-pane
-                                v-for="(item, index) in editableTabs"
+                                v-for="(item) in editableTabs"
                                 :key="item.id"
                                 :label="item.name"
                                 :name="item.path"
                         >
-                        <div class="tab"><span @click="details">总览</span> / <span>{{item.name}}</span></div>
+                        <!-- <div class="tab"><span>{{item.name}}</span></div> -->
                         </el-tab-pane>
                     </el-tabs>
                 </div>
@@ -145,30 +145,57 @@
                 editableTabsValue: 'browse', //面包屑导航
                 editableTabs: [{ //页签
                     id: "99",
-                    name: "首页",
+                    name: "总览",
                     path: "browse",
                 }],
                 //侧边栏
                 list: [
                     {
-                        id: '7',
-                        name: '首页',
-                        path: 'browse'
+                        id: '1',
+                        name: '客户管理',
+                        path: 'customer'
                     },
+                      {
+                        id: '2',
+                        name: '跟进管理',
+                        path: 'followup'
+                    },
+                      {
+                        id: '3',
+                        name: '日志管理',
+                        path: 'log'
+                    },
+                    {
+                        id: '4',
+                        name: '统计管理',
+                        path: 'statistical'
+                    }
                 ],
                 navList: [
-                    {
-                        id: '8',
-                        name: '权限设置',
-                        path: 'permissions',
+                     {
+                        id: '5',
+                        name: '组织架构',
+                        path: 'organization',
                         children: [
                             {
-                                id: '9',
+                                id: '6',
+                                name: '员工管理',
+                                path: 'employees'
+                            },
+                        ]
+                    },
+                    {
+                        id: '7',
+                        name: '权限设置',
+                        path: 'jurisdiction',
+                        children: [
+                            {
+                                id: '8',
                                 name: '角色设置',
                                 path: 'role'
                             },
                             {
-                                id: '10',
+                                id: '9',
                                 name: '权限管理',
                                 path: 'admin'
                             }
@@ -177,13 +204,18 @@
                 ],
                 //一级侧边栏字体图标
                 icon: {
-                    '7': 'iconfont icon-genjinguanli',
-                    '8': 'iconfont icon-quanxianshezhi1'
+                    '1': 'iconfont icon-kehuguanli',
+                    '2': 'iconfont icon-genjin',
+                    '3': 'iconfont icon-rizhiguanli',
+                    '4': 'iconfont icon-tongji3',
+                    '5': 'iconfont icon-zuzhijiagou',
+                    '7': 'iconfont icon-quanxianguanli31',
                 },
                 //二级侧边栏菜单
                 childrenIcon: {
-                    '9': 'iconfont icon-menu-pass-Emp',
-                    '10': 'iconfont icon-quanxianshezhi',
+                    '6': 'iconfont icon-yuangongguanlizhengjianxueshengzhenggongzuozheng',
+                    '8': 'iconfont icon-jiaoseshezhi',
+                    '9': 'iconfont icon-quanxianguanli2'
                 },
                 headIndex: '/browse'
             }
@@ -324,11 +356,10 @@
     .icon-shouqi {
         cursor: pointer;
     }
-    .icon-shuaxin{
+    .icon-icon-1{
         cursor: pointer;
         margin-left: 50px;
         font-size: 18px;
-        font-weight: bolder;
     }
     .icon-zhankai {
         cursor: pointer;
@@ -370,10 +401,10 @@
         align-items: center;
     }
 
-    #icon {
+    /* #icon {
         font-weight: 400;
         color: #ffffff;
-    }
+    } */
 
     .text {
         margin-left: 15px;
@@ -429,5 +460,8 @@
     }
     .crumbs>>>.el-tabs--border-card>.el-tabs__header .el-tabs__item{
         border-right: 1px #eee solid;
+    }
+    .crumbs>>>.el-tabs--border-card>.el-tabs__content{
+        padding: 0.25px;
     }
 </style>

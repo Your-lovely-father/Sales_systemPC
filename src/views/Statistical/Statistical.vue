@@ -1,14 +1,11 @@
 <template>
-    <div>
-        777
-    </div>
+  <div>
+      统计管理
+  </div>
 </template>
-
 <script>
-    export default {
-    }
+export default {
+}
 </script>
-
 <style scoped>
-
 </style>

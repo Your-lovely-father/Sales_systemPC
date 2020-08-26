@@ -33,13 +33,61 @@ const router = new VueRouter({
                     path: '/browse',
                     component: () => import('../views/Browse/Browse'),
                 },
+                //客户管理
+                {
+                    path: '/customer',
+                    component: () => import('../views/Customer/Customer'),
+                    meta: {
+                        title: '客户管理'
+                    }
+                },
+                //跟进管理
+                {
+                    path: '/followup',
+                    component: () => import('../views/Followup/Followup'),
+                    meta: {
+                        title: '跟进管理'
+                    }
+                },
+                //日志管理
+                {
+                    path: '/log',
+                    component: () => import('../views/Log/Log'),
+                    meta: {
+                        title: '日志管理'
+                    }
+                },
+                //统计管理
+                {
+                    path: '/statistical',
+                    component: () => import('../views/Statistical/Statistical'),
+                    meta: {
+                        title: '统计管理'
+                    }
+                },
+                //员工管理
+                {
+                    path: '/employees',
+                    component: () => import('../views/Organization/Employees/Employees'),
+                    meta: {
+                        title: '员工管理'
+                    }
+                },
+                //角色设置
                 {
                     path: '/role',
-                    component: () => import('../views/Jurisdiction/role'),
+                    component: () => import('../views/Jurisdiction/Role/Role'),
+                    meta: {
+                        title: '角色设置'
+                    }
                 },
+                //权限管理
                 {
                     path: '/admin',
-                    component: () => import('../views/Jurisdiction/admin'),
+                    component: () => import('../views/Jurisdiction/Admin/Admin'),
+                    meta: {
+                        title: '权限管理'
+                    }
                 },
             ],
         },
